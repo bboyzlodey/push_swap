@@ -1,7 +1,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdio.h>
+#include "libft/libft.h"
 
 typedef enum	e_exit_code {
 	CODE_OK,
@@ -30,5 +30,10 @@ void	init_stack(stack to_init, int size, char identifier);
 void	fill_stack(stack to_fill, int ac, char **av);
 
 void	exit_program_with_err(stack *a, stack *b, exit_code code);
+
+/*
+*	instructions_utils.c
+*/
+void	swap_ints(int *first, int *second);
 
 #endif
