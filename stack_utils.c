@@ -1,24 +1,32 @@
 #include "push_swap.h"
 
-void	init_stack(stack to_init, int size, char identifier)
+void	init_stack(stack *to_init, char identifier)
 {
-	to_init.identifier = identifier;
-	to_init.stack_size = size;
-	to_init.values = ft_memalloc(sizeof(int) * size);
-	to_init.stack_values = 0;
+	to_init->identifier = identifier;
+	to_init->stack_size = 0;
+	to_init->head = NULL;
+	to_init->foots = NULL;
 }
 
-void	fill_stack(stack to_fill, int ac, char **av)
+void	fill_stack(stack *to_fill, int ac, char **av)
 {
-	while (to_fill.stack_values < ac && av)
+	if (av == NULL || *av == NULL || ac == 0)
+		return ;
+	else if ((to_fill->head = item_malloc()) == NULL)
 	{
-		to_fill.values[to_fill.stack_values] = ft_atoi(av[to_fill.stack_values]);
-		if (to_fill.stack_values[to_fill.values] == 0)
+		exit_program_with_err(to_fill, NULL, CODE_MEMMORY_ERROR);
+	}
+	else if (init_item(to_fill, av[to_fill->stack_size]) < 0)
+		exit_program_with_err(to_fill, NULL, CODE_ERROR);
+	to_fill->foots = to_fill->head;
+	to_fill->stack_size++;
+	while (to_fill->stack_size < ac && (to_fill->foots->next = item_malloc()) != 0 /*NULL*/)
+	{
+		to_fill->foots = to_fill->foots->next;
+		if (init_item(to_fill->foots, av[to_fill->stack_size]) < 0)
 		{
-			if (!(av[to_fill.stack_values][0] == "0" && av[to_fill.stack_values][1] == "\0"))
-				exit_program_with_err(&to_fill, NULL, CODE_ERROR);
-
+			exit_program_with_err(to_fill, NULL, CODE_ERROR);
 		}
-		to_fill.stack_values;		
+		to_fill->stack_size++;
 	}
 }
