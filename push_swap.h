@@ -30,13 +30,17 @@ typedef struct	s_stack {
 
 typedef t_stack stack;
 
-void	push(stack from, stack to);
+// void	push(stack from, stack to);
 void	swap(stack swap);
 void	rotate(stack rotate);
 void	reverse_rotate(stack rev_rotate);
 
+/*
+*	stack_utils.c
+*/
 void	init_stack(stack *to_init, char identifier);
 void	fill_stack(stack *to_fill, int ac, char **av);
+int		is_sorted_stack(stack sorted);
 
 void	exit_program_with_err(stack *a, stack *b, exit_code code);
 
@@ -50,5 +54,10 @@ void	swap_ints(int *first, int *second);
 */
 int		init_item(t_item *item, char *value);
 t_item	*item_malloc(void);
+
+/*
+*	debug_utils.c
+*/
+void	print_stack(stack print);
 
 #endif
