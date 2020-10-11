@@ -4,7 +4,14 @@ static void	free_stack(stack *clear)
 {
 	if (clear != NULL)
 	{
-		ft_strdel(&(clear[0].values));
+		clear->foots = NULL;
+		while (clear->head)
+		{
+			clear->foots = clear->head->next;
+			ft_memdel(&(clear->head));
+			clear->head = clear->foots;
+		}
+		ft_memdel(&(clear));
 	}
 }
 
