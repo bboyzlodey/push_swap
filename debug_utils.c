@@ -12,7 +12,7 @@ void	print_stack(stack print)
 	printf("stack %c head:\n", print.identifier);
 	while (tmp)
 	{
-		printf("[value: %d, pos: %d]\n", tmp->value, position);
+		printf("[value: %-30d, pos: %d]\n", tmp->value, position);
 		position--;
 		tmp = tmp->next;
 	}
