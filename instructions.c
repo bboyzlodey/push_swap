@@ -5,21 +5,19 @@
 
 // }
 
-// void	swap(stack swap)
-// {
-// 	// int	*first;
-// 	// int *second;
+void	swap(stack *swap)
+{
+	t_item *bellow_top;
 
-// 	// first = NULL;
-// 	// second = NULL;
-// 	// if (swap.stack_values > 1)
-// 	// {
-// 	// 	first = swap.values[swap.stack_values - 1];
-// 	// 	second = swap.values[swap.stack_values - 2];
-// 	// 	swap_ints(first, second);
-// 	// }
-	
-// }
+	bellow_top = NULL;
+	if (swap->stack_size > 1)
+	{
+		bellow_top = swap->head->next;
+		swap->head->next = bellow_top->next;
+		bellow_top->next = swap->head;
+		swap->head = bellow_top;
+	}
+}
 
 // void	rotate(stack rotate)
 // {

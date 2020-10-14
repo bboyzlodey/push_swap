@@ -62,13 +62,14 @@ void	push(stack *push, t_item *item)
 	push->head = item;
 }
 
-t_item	*pop(stack pop)
+t_item	*pop(stack *pop)
 {
 	t_item	*tmp;
 
 	tmp = NULL;
-	tmp = pop.head;
-	pop.head = pop.head->next;
+	tmp = pop->head;
+	pop->head = pop->head->next;
 	tmp->next = NULL;
 	tmp->prev = NULL;
+	return tmp;
 }

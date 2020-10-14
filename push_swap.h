@@ -32,9 +32,10 @@ typedef t_stack stack;
 
 // void	push(stack from, stack to);
 void	push(stack *push, t_item *item);
-void	swap(stack swap);
-void	rotate(stack rotate);
-void	reverse_rotate(stack rev_rotate);
+t_item	*pop(stack *pop);
+void	swap(stack *swap);
+void	rotate(stack *rotate);
+void	reverse_rotate(stack *rev_rotate);
 
 /*
 *	stack_utils.c
