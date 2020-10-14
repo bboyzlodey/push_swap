@@ -7,7 +7,7 @@ int		init_item(t_item *item, char *value)
 	item->value = 0;
 	if (value == NULL || value[0] == '\0')
 		return -1;
-	else if ((item->value = ft_atoi(value)) == 0 && value[0] == '0' && value[1] != '\0')
+	else if ((item->value = ft_atoi(value)) == 0 && value[0] == '0' && value[1] != '\0' || (value[0] != '0' && item->value == 0))
 	{
 		return -1;
 	}

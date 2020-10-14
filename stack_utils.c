@@ -33,7 +33,7 @@ void	fill_stack(stack *to_fill, int ac, char **av)
 		exit_program_with_err(to_fill, NULL, CODE_ERROR);
 	to_fill->foots = to_fill->head;
 	to_fill->stack_size++;
-	push(to_fill, item_from_int(390));
+	// push(to_fill, item_from_int(390));
 	while (to_fill->stack_size < ac && (to_fill->foots->next = item_malloc()) != NULL /*NULL*/)
 	{
 		to_fill->foots = to_fill->foots->next;
