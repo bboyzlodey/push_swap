@@ -19,25 +19,26 @@ void	swap(stack *swap)
 	}
 }
 
-// void	rotate(stack rotate)
-// {
-// 	// int	tmp;
-// 	// int	count;
+void	rotate(stack *rotate)
+{
+	t_item	*prelast;
 
-// 	// tmp = NULL;
-// 	// count = rotate.stack_values - 1;
-// 	// while (count > 0)
-// 	// {
+	prelast = NULL;
+	prelast = rotate->head;
+	while (prelast->next && prelast->next != rotate->foots)
+	{
+		prelast = prelast->next;
+	}
+	prelast->next = NULL;
+	rotate->foots->next = rotate->head;
+	rotate->head = rotate->foots;
+	rotate->foots = prelast;
+}
 
-// 	// 	count--;
-// 	// }
-// 	// if (rotate.stack_values > 2)
-// 	// {
-
-// 	// }
-// }
-
-// void	reverse_rotate(stack v_rotate)
-// {
-	
-// }
+void	reverse_rotate(stack *v_rotate)
+{
+	v_rotate->foots->next = v_rotate->head;
+	v_rotate->foots = v_rotate->head;
+	v_rotate->head = v_rotate->foots->next;
+	v_rotate->foots->next = NULL;
+}
