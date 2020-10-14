@@ -2,16 +2,21 @@
 
 static void	free_stack(stack *clear)
 {
+	void	*to_free;
+
+	to_free = NULL;
 	if (clear != NULL)
 	{
 		clear->foots = NULL;
 		while (clear->head)
 		{
 			clear->foots = clear->head->next;
-			ft_memdel(&(clear->head));
+			to_free = ((void *) ((clear->head)));
+			ft_memdel(&to_free);
 			clear->head = clear->foots;
 		}
-		ft_memdel(&(clear));
+		to_free = ((void *)clear);
+		ft_memdel(&to_free);
 	}
 }
 

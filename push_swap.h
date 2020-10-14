@@ -15,9 +15,9 @@ typedef	t_exit_code exit_code;
 
 typedef struct	s_item
 {
-	int		value;
-	t_item	*next;
-	t_item	*prev;
+	int				value;
+	struct s_item	*next;
+	struct s_item	*prev;
 }				t_item;
 
 
@@ -31,6 +31,7 @@ typedef struct	s_stack {
 typedef t_stack stack;
 
 // void	push(stack from, stack to);
+void	push(stack *push, t_item *item);
 void	swap(stack swap);
 void	rotate(stack rotate);
 void	reverse_rotate(stack rev_rotate);
@@ -54,6 +55,7 @@ void	swap_ints(int *first, int *second);
 */
 int		init_item(t_item *item, char *value);
 t_item	*item_malloc(void);
+t_item	*item_from_int(int val);
 
 /*
 *	debug_utils.c

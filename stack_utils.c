@@ -29,11 +29,12 @@ void	fill_stack(stack *to_fill, int ac, char **av)
 	{
 		exit_program_with_err(to_fill, NULL, CODE_MEMMORY_ERROR);
 	}
-	else if (init_item(to_fill, av[to_fill->stack_size]) < 0)
+	else if (init_item(to_fill->head, av[to_fill->stack_size]) < 0)
 		exit_program_with_err(to_fill, NULL, CODE_ERROR);
 	to_fill->foots = to_fill->head;
 	to_fill->stack_size++;
-	while (to_fill->stack_size < ac && (to_fill->foots->next = item_malloc()) != 0 /*NULL*/)
+	push(to_fill, item_from_int(390));
+	while (to_fill->stack_size < ac && (to_fill->foots->next = item_malloc()) != NULL /*NULL*/)
 	{
 		to_fill->foots = to_fill->foots->next;
 		if (init_item(to_fill->foots, av[to_fill->stack_size]) < 0)
@@ -55,10 +56,10 @@ int		is_sorted_stack(stack sorted)
 	return (r_is_sorted(sorted.head, sorted.head->next->value));
 }
 
-void	push(stack push, t_item *item)
+void	push(stack *push, t_item *item)
 {
-	item->next = push.head;
-	push.head = item->next;
+	item->next = push->head;
+	push->head = item;
 }
 
 t_item	*pop(stack pop)
