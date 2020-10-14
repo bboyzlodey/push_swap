@@ -2,16 +2,21 @@
 
 static void	free_stack(stack *clear)
 {
+	void	*to_free;
+
+	to_free = NULL;
 	if (clear != NULL)
 	{
 		clear->foots = NULL;
 		while (clear->head)
 		{
 			clear->foots = clear->head->next;
-			ft_memdel(&(clear->head));
+			to_free = ((void *) ((clear->head)));
+			ft_memdel(&to_free);
 			clear->head = clear->foots;
 		}
-		ft_memdel(&(clear));
+		to_free = ((void *)clear);
+		// ft_memdel((void **)(&clear));
 	}
 }
 
@@ -35,5 +40,6 @@ void		exit_program_with_err(stack *a, stack *b, exit_code code)
 		message = "Error";
 	}
 	ft_putstr(message);
+	ft_putchar('\n');
 	exit(code);	
 }
