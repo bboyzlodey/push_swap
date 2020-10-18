@@ -1,9 +1,21 @@
 #include "../push_swap.h"
 #include "../libft/get_next_line.h"
 
+static int		command_is_valid(char *s)
+{
+	int		result;
+
+	result = 0;
+	result = ft_strncmp(s, "pa", 2) | ft_strncmp(s, "pb", 2) | \
+	ft_strncmp(s, "sa", 2) | ft_strncmp(s, "sb", 2) | ft_strncmp(s, "ss", 2) | \
+	ft_strncmp(s, "ra", 2) | ft_strncmp(s, "rb", 2) | ft_strncmp(s, "rr", 2) | \
+	ft_strncmp(s, "rra", 2) | ft_strncmp(s, "rrb", 2) | ft_strncmp(s, "rrr", 2);
+	return (result);
+}
+
 static stack	*get_choosed_stack(stack *a, stack *b, char *av)
 {
-	if (ft_strlen(av) < 2)
+	if (command_is_valid(av))
 	{
 		exit_program_with_err(a, b, CODE_ERROR);
 	}
@@ -53,8 +65,17 @@ static void		checker_process(stack *a, stack *b)
 
 	line = NULL;
 	func = NULL;
-	while (get_next_line(3, &line))
+
+	int gnl = 0;
+	while ( gnl = get_next_line(2, &line))
 	{
+		printf("\t%d comand: %s | %d\n",gnl, line, ft_strlen(line));
+		if (ft_strcmp(line, "print") == 0)
+		{
+			print_stack(*a);
+			print_stack(*b);
+			continue ;
+		}
 		choosed = get_choosed_stack(a, b, line);
 		func = get_action(line);
 		if (func != NULL && choosed != NULL)
@@ -69,6 +90,7 @@ static void		checker_process(stack *a, stack *b)
 		ft_strdel(&line);
 	}
 	ft_strdel(&line);
+	check_result(a, b);
 }
 
 int				main(int ac, char **av)
@@ -84,5 +106,6 @@ int				main(int ac, char **av)
 	init_stack(a, 'a');
 	init_stack(b, 'b');
 	fill_stack(a, ac - 1, av + 1);
+	checker_process(a, b);
 	return 0;
 }
