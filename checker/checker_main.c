@@ -15,7 +15,7 @@ static int		command_is_valid(char *s)
 
 static stack	*get_choosed_stack(stack *a, stack *b, char *av)
 {
-	if (command_is_valid(av))
+	if (command_is_valid(av) == 0)
 	{
 		exit_program_with_err(a, b, CODE_ERROR);
 	}
