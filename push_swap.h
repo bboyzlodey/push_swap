@@ -3,6 +3,7 @@
 
 #include "libft/libft.h"
 
+
 typedef enum	e_exit_code {
 	CODE_OK,
 	CODE_KO,
@@ -30,6 +31,8 @@ typedef struct	s_stack {
 
 typedef t_stack stack;
 
+typedef void (*action)(stack*);
+
 // void	push(stack from, stack to);
 void	push(stack *push, t_item *item);
 t_item	*pop(stack *pop);
@@ -42,7 +45,8 @@ void	reverse_rotate(stack *rev_rotate);
 */
 void	init_stack(stack *to_init, char identifier);
 void	fill_stack(stack *to_fill, int ac, char **av);
-int		is_sorted_stack(stack sorted);
+int		is_sorted_stack(stack *sorted);
+stack	*stack_malloc(void);
 
 void	exit_program_with_err(stack *a, stack *b, exit_code code);
 

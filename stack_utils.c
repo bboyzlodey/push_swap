@@ -49,11 +49,11 @@ void	fill_stack(stack *to_fill, int ac, char **av)
 *	int		is_sorted_stack(stack sorted);
 *	return value: 0 - if stack sorted, -1 - else
 */
-int		is_sorted_stack(stack sorted)
+int		is_sorted_stack(stack *sorted)
 {
-	if (sorted.head == NULL || sorted.head->next == NULL)
+	if (sorted->head == NULL || sorted->head->next == NULL)
 		return (0);	
-	return (r_is_sorted(sorted.head, sorted.head->next->value));
+	return (r_is_sorted(sorted->head, sorted->head->next->value));
 }
 
 void	push(stack *push, t_item *item)
@@ -74,4 +74,9 @@ t_item	*pop(stack *pop)
 	tmp->prev = NULL;
 	pop->stack_size--;
 	return tmp;
+}
+
+stack	*stack_malloc(void)
+{
+	return ft_memalloc(sizeof(stack));
 }
