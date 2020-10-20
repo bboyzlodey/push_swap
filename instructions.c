@@ -1,10 +1,5 @@
 #include "push_swap.h"
 
-// void	push(stack from, stack to)
-// {
-
-// }
-
 void	swap(stack *swap)
 {
 	t_item *bellow_top;
