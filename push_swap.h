@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/28 01:34:25 by asybil            #+#    #+#             */
+/*   Updated: 2020/10/28 02:09:45 by asybil           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -31,6 +43,32 @@ typedef struct	s_stack {
 
 typedef t_stack stack;
 
+struct s_range
+{
+	int	from;
+	int	to;
+};
+
+typedef struct s_range range;
+
+struct s_range_pack
+{
+	range	*ranges;
+	int		count_ranges;
+};
+
+typedef struct s_range_pack range_pack;
+
+struct s_sorter
+{
+	stack		*a;
+	stack		*b;
+	range_pack	*ranges;
+	range		*min_max;
+};
+
+typedef	struct s_sorter sorter;
+
 typedef void (*action)(stack*);
 
 // void	push(stack from, stack to);
@@ -58,6 +96,7 @@ void	swap_ints(int *first, int *second);
 /*
 *	item_utils.c
 */
+
 int		init_item(t_item *item, char *value);
 t_item	*item_malloc(void);
 t_item	*item_from_int(int val);
@@ -66,5 +105,15 @@ t_item	*item_from_int(int val);
 *	debug_utils.c
 */
 void	print_stack(stack print);
+
+/*
+*	sorter.c
+*/
+sorter	*new_sorter(stack *a, stack *b);
+
+/*
+** 	range_utils.c
+*/
+range	*ft_find_min_max(stack *a, stack *b);
 
 #endif

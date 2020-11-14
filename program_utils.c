@@ -11,12 +11,12 @@ static void	free_stack(stack *clear)
 		while (clear->head)
 		{
 			clear->foots = clear->head->next;
-			to_free = ((void *) ((clear->head)));
+			to_free = ((void *)((clear->head)));
 			ft_memdel(&to_free);
 			clear->head = clear->foots;
 		}
 		to_free = ((void *)clear);
-		// ft_memdel((void **)(&clear));
+		ft_memdel(&to_free);
 	}
 }
 
@@ -41,5 +41,5 @@ void		exit_program_with_err(stack *a, stack *b, exit_code code)
 	}
 	ft_putstr(message);
 	ft_putchar('\n');
-	exit(code);	
+	exit(code);
 }
