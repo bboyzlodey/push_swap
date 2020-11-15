@@ -3,4 +3,4 @@ test:
 checker:
 	gcc *.c checker/checker_main.c ./libft/libft.a -g
 push_swap:
-	gcc *.c push_swap/push_swap.c ./libft/libft.a -g
+	gcc *.c ./sort_algorithms/sort_three_values.c push_swap/push_swap_main.c ./libft/libft.a -g

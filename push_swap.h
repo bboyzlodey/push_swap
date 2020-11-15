@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:25 by asybil            #+#    #+#             */
-/*   Updated: 2020/10/28 02:09:45 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/15 21:05:02 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "libft/libft.h"
 
+int count_of_operations;
 
 typedef enum	e_exit_code {
 	CODE_OK,
@@ -116,4 +117,8 @@ sorter	*new_sorter(stack *a, stack *b);
 */
 range	*ft_find_min_max(stack *a, stack *b);
 
+/*
+**	sort algorithms 
+*/
+int			sort_three_values(stack *a);
 #endif
