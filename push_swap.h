@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:25 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/15 21:53:30 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/22 01:22:41 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ typedef t_stack stack;
 
 struct s_range
 {
-	int	from;
-	int	to;
+	int	*array;
+	int	size;
 };
 
 typedef struct s_range range;
@@ -69,7 +69,6 @@ struct s_sorter
 	stack		*a;
 	stack		*b;
 	range_pack	*ranges;
-	range		*min_max;
 };
 
 typedef	struct s_sorter sorter;
@@ -97,6 +96,10 @@ void	exit_program_with_err(stack *a, stack *b, exit_code code);
 *	instructions_utils.c
 */
 void	swap_ints(int *first, int *second);
+/*
+** instructions.c
+*/
+void	push_to(stack *from, stack *a, stack *b);
 
 /*
 *	item_utils.c
@@ -116,13 +119,19 @@ void	print_stack(stack print);
 */
 sorter	*new_sorter(stack *a, stack *b);
 
+// quick_sort
+void	quick_sort(int *array, int start, int end);
+
 /*
 ** 	range_utils.c
 */
 range	*ft_find_min_max(stack *a, stack *b);
-
+//range_pack_utils.c
+range_pack			*range_pack_from_stack(stack *stack);
 /*
 **	sort algorithms 
 */
 int			sort_three_values(stack *a);
+int			sort_five_values(stack *a, stack *b);
+
 #endif

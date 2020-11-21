@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 19:51:55 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/15 21:05:46 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/15 23:54:44 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,17 @@ int			sort_three_values(stack *a)
 	return sort_three_values(a);
 }
 
+int		sort_five_values(stack *a, stack *b)
+{
+	while (a->stack_size != 3)
+		push_to(a, a, b);
+	sort_three_values(a);
+	if (b->stack_size == 2)
+	{
+		if (b->head->value < b->head->next->value)
+		{
+			
+		}
+	}
+	
+}

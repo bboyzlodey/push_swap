@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:38 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/15 21:52:38 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/15 22:02:10 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,22 +51,6 @@ static action	get_action(char *av)
 		return rotate;
 	}
 	return NULL;
-}
-
-static void		push_to(stack *from, stack *a, stack *b)
-{
-	stack	*to;
-
-	to = NULL;
-	to = from == a ? b : a;
-	push(to, pop(from));
-	if (PS_VERBOSE == 1 && to != NULL)
-	{
-		// TODO Use ft_printf
-		ft_putchar('p');
-		ft_putchar(to->identifier);
-		ft_putchar('\n');
-	}
 }
 
 static void		check_result(stack *a, stack *b)

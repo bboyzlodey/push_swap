@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:05 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/15 21:54:29 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/15 22:02:23 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,23 @@ void	reverse_rotate(stack *v_rotate)
 		// TODO Use ft_printf
 		ft_putstr("rr");
 		ft_putchar(v_rotate->identifier);
+		ft_putchar('\n');
+	}
+}
+
+
+void		push_to(stack *from, stack *a, stack *b)
+{
+	stack	*to;
+
+	to = NULL;
+	to = from == a ? b : a;
+	push(to, pop(from));
+	if (PS_VERBOSE == 1 && to != NULL)
+	{
+		// TODO Use ft_printf
+		ft_putchar('p');
+		ft_putchar(to->identifier);
 		ft_putchar('\n');
 	}
 }

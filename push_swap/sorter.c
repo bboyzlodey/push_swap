@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:29:04 by asybil            #+#    #+#             */
-/*   Updated: 2020/10/28 02:07:41 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/22 01:56:28 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ sorter	*new_sorter(stack *a, stack *b)
 	}
 	new->a = a;
 	new->b = b;
-	new->min_max = ft_find_min_max(a, b);
-	new->ranges = 
+	new->ranges = range_pack_from_stack(a);
 	return new;
 }
