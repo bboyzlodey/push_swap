@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:25 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 01:22:41 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/22 16:13:15 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ typedef	struct s_sorter sorter;
 
 typedef void (*action)(stack*);
 
+typedef void (*repeat_action)(action,int, stack *);
+
 // void	push(stack from, stack to);
 void	push(stack *push, t_item *item);
 t_item	*pop(stack *pop);
@@ -82,6 +84,8 @@ void	swap(stack *swap);
 void	rotate(stack *rotate);
 void	reverse_rotate(stack *rev_rotate);
 
+
+void	repeat(action func, int times, stack *arg);
 /*
 *	stack_utils.c
 */
@@ -113,6 +117,7 @@ t_item	*item_from_int(int val);
 *	debug_utils.c
 */
 void	print_stack(stack print);
+void range_pack_verbose(sorter *sorter);
 
 /*
 *	sorter.c
@@ -126,6 +131,7 @@ void	quick_sort(int *array, int start, int end);
 ** 	range_utils.c
 */
 range	*ft_find_min_max(stack *a, stack *b);
+int				find_near_int(range *range, stack *a);
 //range_pack_utils.c
 range_pack			*range_pack_from_stack(stack *stack);
 /*

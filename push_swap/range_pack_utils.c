@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 02:08:27 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 02:12:54 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/22 18:55:47 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ static int			range_values(int numbers)
 	int	groups;
 
 	groups = 1;
-	groups = groups > 10 && groups <= 24 ? 3 : groups;
-	groups = groups > 24 && groups <= 99 ? 4 : groups;
-	groups = groups > 100 && groups <= 200 ? 5 : groups;
-	groups = groups > 200 && groups <= 350 ? 7 : groups;
-	groups = groups > 350 && groups < 700 ? 11 : groups;
-	groups = groups > 700 && groups < 1000 ? 15 : groups;
+	groups = numbers > 10 && numbers <= 24 ? 3 : groups;
+	groups = numbers > 24 && numbers <= 99 ? 4 : groups;
+	groups = numbers > 100 && numbers <= 200 ? 5 : groups;
+	groups = numbers > 200 && numbers <= 350 ? 7 : groups;
+	groups = numbers > 350 && numbers < 700 ? 11 : groups;
+	groups = numbers > 700 && numbers < 1000 ? 15 : groups;
 	return (groups);
 }
 
@@ -78,11 +78,22 @@ static int			*get_int_from_stack(stack *stack)
 	return (ints);
 }
 
+static int print_int_arr(int *array, int size)
+{
+	int i = 0;
+	printf("Print int array[%d]\n", size);
+	while (i < size)
+	{
+		printf("%3d: [%4d]\n", i , array[i]);
+		i++;
+	}
+}
 range_pack			*range_pack_from_stack(stack *stack)
 {
 	int		*ints;
 
 	ints = get_int_from_stack(stack);
-	quick_sort(ints, 0, (stack->stack_size));
-	return (pack_from_sorted(ints, range_values(stack->stack_size), stack->stack_size));
+	quick_sort(ints, 0, (stack->stack_size) - 1);
+	print_int_arr(ints, stack->stack_size);
+	return (pack_from_sorted(ints, range_values(stack->stack_size), (stack->stack_size) - 1));
 }

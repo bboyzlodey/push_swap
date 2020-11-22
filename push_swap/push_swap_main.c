@@ -6,28 +6,40 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:36 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 02:24:31 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/22 19:27:01 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+static void		move_all_stack_b(sorter *sorter)
+{
+	int	i;
+	int	count_ranges;
 
+	count_ranges = sorter->ranges->ranges[0].size;
+	i = 0;
+	range_pack_verbose(sorter);
+	while (sorter->a->stack_size)
+	{
+		if (i / count_ranges >= sorter->ranges->count_ranges)
+		{
+			find_near_int((sorter->ranges->ranges) + ((sorter->ranges->count_ranges) - 1), sorter->a);
+		}
+		else	
+			find_near_int((sorter->ranges->ranges) + (i / count_ranges), sorter->a);
+		push_to(sorter->a, sorter->a, sorter->b);
+		i++;
+	}
+}
 static void		sort_many_values(sorter *sorter)
 {
 	sorter->ranges = range_pack_from_stack(sorter->a);
-	printf("size of ranges: %d\n", (sorter->ranges->count_ranges));
-	int i = 0;
-	while (i < (sorter->ranges->count_ranges))
-	{
-		int j = 0;
-		while (j < sorter->ranges->ranges[i].size)
-		{
-			printf("range: %5d | item: %5d | value: %d\n", j, i, sorter->ranges->ranges[i].array[j]);
-			j++;
-		}
-		i++;
-	}
+	print_stack(sorter->a[0]);
+	print_stack(sorter->b[0]);
+	move_all_stack_b(sorter);
+	print_stack(sorter->a[0]);
+	print_stack(sorter->b[0]);
 }
 
 static sorter	*create_sorter(void)
