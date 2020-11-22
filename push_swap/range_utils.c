@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:36:00 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 01:43:00 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:12:15 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,28 +91,3 @@ int				find_near_int(range *range, stack *a)
 	move_to_top(top, bottom, a);
 	return (0);
 }
-/*
-** range			*ft_find_min_max(stack *a, stack *b)
-** {
-** 	range	*new;
-** 	t_item	*tmp;
-** 
-** 	new = NULL;
-** 	tmp = NULL;
-** 	if ((new = range_malloc()) == NULL)
-** 	{
-** 		exit_program_with_err(a, b, CODE_MEMMORY_ERROR);
-** 	}
-** 	tmp = a->head;
-** 	while (tmp)
-** 	{
-** 		if (new->from > tmp->value)
-** 			new->from = tmp->value;
-** 		else if (new->to < tmp->value)
-** 			new->to = tmp->value;
-** 		tmp = tmp->next;
-** 	}
-** 	return new;
-** }
-** 
-*/

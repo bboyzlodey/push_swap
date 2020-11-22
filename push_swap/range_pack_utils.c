@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 02:08:27 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 01:42:49 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:17:29 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,10 @@ static int			*get_int_from_stack(stack *stack)
 	return (ints);
 }
 
+/*
+** TODO Delete debug code
+*/
+
 static int			print_int_arr(int *array, int size)
 {
 	int i = 0;
@@ -84,12 +88,22 @@ static int			print_int_arr(int *array, int size)
 	}
 	return (0);
 }
+
+/*
+** TODO Delete debug code
+*/
+
 range_pack			*range_pack_from_stack(stack *stack)
 {
-	int		*ints;
+	int			*ints;
+	range_pack	*tmp;
 
+	tmp = NULL;
 	ints = get_int_from_stack(stack);
 	quick_sort(ints, 0, (stack->stack_size) - 1);
 	print_int_arr(ints, stack->stack_size);
-	return (pack_from_sorted(ints, range_values(stack->stack_size), (stack->stack_size) - 1));
+	tmp = pack_from_sorted(ints, range_values(stack->stack_size),\
+	 (stack->stack_size) - 1);
+	ft_memdel(&ints);
+	return (tmp);
 }
