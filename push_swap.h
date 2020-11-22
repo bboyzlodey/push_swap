@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:25 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 01:28:18 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:03:30 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,9 @@ typedef	struct s_sorter sorter;
 typedef void (*action)(stack*);
 
 typedef void (*repeat_action)(action,int, stack *);
+
+action		get_action(char *av);
+stack		*get_choosed_stack(stack *a, stack *b, char *av);
 
 // void	push(stack from, stack to);
 void	push(stack *push, t_item *item);
