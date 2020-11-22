@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:36 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 22:15:02 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/22 22:36:41 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,8 +117,31 @@ static void		move_all_stack_b(sorter *sorter)
 		i++;
 	}
 }
+static void		push_all_to_a(stack *a, stack *b)
+{
+	while (b->stack_size)
+	{
+		push_to(b, a, b);
+	}
+}
 
+static void		validate_stack(stack *b)
+{
+	int		biggest_pos;
 
+	biggest_pos = find_biggest(b);
+	if (biggest_pos == 1)
+	{
+		swap(b);
+	}
+	else if (biggest_pos <= (b->stack_size) / 2) {
+		repeat(reverse_rotate, biggest_pos, b);
+	}
+	else
+	{
+		repeat(rotate, b->stack_size - biggest_pos, b);
+	}
+}
 
 
 static void		sort_many_values(sorter *sorter)
@@ -127,6 +150,8 @@ static void		sort_many_values(sorter *sorter)
 	print_stack(sorter->a[0]);
 	print_stack(sorter->b[0]);
 	move_all_stack_b(sorter);
+	validate_stack(sorter->b);
+	push_all_to_a(sorter->a, sorter->b);
 	print_stack(sorter->a[0]);
 	print_stack(sorter->b[0]);
 }
@@ -157,7 +182,6 @@ int	main(int ac, char **av)
 	}
 	else if (sorter->a->stack_size > 3 && sorter->a->stack_size <= 5)
 	{
-		
 	}
 	else
 		sort_many_values(sorter);
