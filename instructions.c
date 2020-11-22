@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:05 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/15 22:02:23 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/22 21:47:23 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	reverse_rotate(stack *v_rotate)
 	v_rotate->foots = v_rotate->head;
 	v_rotate->head = v_rotate->foots->next;
 	v_rotate->foots->next = NULL;
+	// refresh_foots(v_rotate);
 	if (PS_VERBOSE == 1)
 	{
 		// TODO Use ft_printf

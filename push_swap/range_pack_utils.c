@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 02:08:27 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 18:55:47 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/22 21:16:17 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static int			*get_int_from_stack(stack *stack)
 	return (ints);
 }
 
-static int print_int_arr(int *array, int size)
+static int			print_int_arr(int *array, int size)
 {
 	int i = 0;
 	printf("Print int array[%d]\n", size);

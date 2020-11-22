@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:22 by asybil            #+#    #+#             */
-/*   Updated: 2020/10/28 01:33:27 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/22 21:45:34 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,24 @@ int		is_sorted_stack(stack *sorted)
 	return (r_is_sorted(sorted->head, sorted->head->next->value));
 }
 
+void	refresh_foots(stack *stack)
+{
+	t_item	*tmp;
+
+	tmp = stack->head;
+	while (tmp && tmp->next)
+	{
+		tmp = tmp->next;
+	}
+	stack->foots = tmp;
+}
+
 void	push(stack *push, t_item *item)
 {
 	item->next = push->head;
 	push->head = item;
 	push->stack_size++;
+	refresh_foots(push);
 }
 
 t_item	*pop(stack *pop)
@@ -84,6 +97,7 @@ t_item	*pop(stack *pop)
 	tmp->next = NULL;
 	tmp->prev = NULL;
 	pop->stack_size--;
+	refresh_foots(pop);
 	return tmp;
 }
 

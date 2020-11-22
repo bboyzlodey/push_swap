@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:25 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 16:13:15 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/22 21:45:43 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,7 @@ void	quick_sort(int *array, int start, int end);
 */
 range	*ft_find_min_max(stack *a, stack *b);
 int				find_near_int(range *range, stack *a);
+void	refresh_foots(stack *stack);
 //range_pack_utils.c
 range_pack			*range_pack_from_stack(stack *stack);
 /*
