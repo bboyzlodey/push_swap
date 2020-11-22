@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sorter.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
+/*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:29:04 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 14:47:52 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 01:43:14 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-static sorter	*sorter_malloc(void)
-{
-	return ft_memalloc(sizeof(sorter));
-}
-
-
 
 /*
 **	Deprecated

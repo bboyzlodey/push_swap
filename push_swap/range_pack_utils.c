@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   range_pack_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
+/*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 02:08:27 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 21:16:17 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 01:42:49 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-static range_pack	*range_pack_malloc(void)
-{
-	return (ft_memalloc(sizeof(range_pack)));
-}
 
 static int			range_values(int numbers)
 {
@@ -87,6 +82,7 @@ static int			print_int_arr(int *array, int size)
 		printf("%3d: [%4d]\n", i , array[i]);
 		i++;
 	}
+	return (0);
 }
 range_pack			*range_pack_from_stack(stack *stack)
 {

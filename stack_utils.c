@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
+/*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:22 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 21:45:34 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 01:39:32 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-*	Recursion search
-*	return value: 0 - if stack sorted, -1 - else
+**	Recursion search
+**	return value: 0 - if stack sorted, -1 - else
 */
 static	int	r_is_sorted(t_item *current, int next_val)
 {

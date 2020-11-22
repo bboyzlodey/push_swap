@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
+/*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:05 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 21:47:23 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 01:38:13 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,7 @@ void	swap(stack *swap)
 		swap->foots->next = NULL;
 	}
 	if (PS_VERBOSE == 1)
-	{
-		// TODO Use ft_printf
-		ft_putchar('s');
-		ft_putchar(swap->identifier);
-		ft_putchar('\n');
-	}
+		printf("s%c\n", (swap->identifier));
 }
 
 void	rotate(stack *rotate)
@@ -57,12 +52,7 @@ void	rotate(stack *rotate)
 	rotate->head = rotate->foots;
 	rotate->foots = prelast;
 	if (PS_VERBOSE == 1)
-	{
-		// TODO Use ft_printf
-		ft_putchar('r');
-		ft_putchar(rotate->identifier);
-		ft_putchar('\n');
-	}
+		printf("r%c", (rotate->identifier));
 }
 
 void	reverse_rotate(stack *v_rotate)
@@ -71,18 +61,11 @@ void	reverse_rotate(stack *v_rotate)
 	v_rotate->foots = v_rotate->head;
 	v_rotate->head = v_rotate->foots->next;
 	v_rotate->foots->next = NULL;
-	// refresh_foots(v_rotate);
 	if (PS_VERBOSE == 1)
-	{
-		// TODO Use ft_printf
-		ft_putstr("rr");
-		ft_putchar(v_rotate->identifier);
-		ft_putchar('\n');
-	}
+		printf("rr%c", (v_rotate->identifier));
 }
 
-
-void		push_to(stack *from, stack *a, stack *b)
+void	push_to(stack *from, stack *a, stack *b)
 {
 	stack	*to;
 
@@ -90,10 +73,5 @@ void		push_to(stack *from, stack *a, stack *b)
 	to = from == a ? b : a;
 	push(to, pop(from));
 	if (PS_VERBOSE == 1 && to != NULL)
-	{
-		// TODO Use ft_printf
-		ft_putchar('p');
-		ft_putchar(to->identifier);
-		ft_putchar('\n');
-	}
+		printf("p%c", (to->identifier));
 }
