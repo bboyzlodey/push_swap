@@ -2,8 +2,6 @@ NAME_ONE = push_swap
 NAME_TWO = checker
 LIBFTA = $(LIB_DIR)libft.a
 
-HEADER = $(HEAD_DIR)checker_push_swap.h
-
 LIB_DIR = libft/
 HEAD_DIR = includes/
 
@@ -42,24 +40,26 @@ $(OBJ_DIR_PS):
 $(OBJ_DIR_CH):
 	@mkdir -p $(OBJ_DIR_CH)
 
-$(NAME_ONE): $(OBJ_DIR_PS) $(OBJ_PS) $(HEADER) $(LIB_H)
+$(NAME_ONE): $(OBJ_DIR_PS) $(OBJ_PS)
+	@echo -------compile push swap begin--------
 	@make -C $(LIB_DIR)
-	@$(COMP) $(LIBFTA) $(OBJ_PS) -o $(NAME_ONE)
+	@$(COMP) $(OBJ_PS) $(LIBFTA) -o $(NAME_ONE)
 	@echo -------compile push swap finish--------
 
-$(NAME_TWO): $(OBJ_DIR_CH) $(OBJ_CH) $(HEADER) $(LIB_H)
+$(NAME_TWO): $(OBJ_DIR_CH) $(OBJ_CH)
+	@echo -------compile checker begin--------
 	@make -C $(LIB_DIR)
-	@$(COMP) $(LIBFTA) $(OBJ_CH) -o $(NAME_TWO)
+	@$(COMP) $(OBJ_CH) $(LIBFTA) -o $(NAME_TWO)
 	@echo -------compile checker finish----------
 
-$(OBJ_DIR_PS)%.o: $(DIR_PS)%.c $(HEADER)
+$(OBJ_DIR_PS)%.o: $(DIR_PS)%.c
 	@$(COMP) -c $< -o $@
-$(OBJ_DIR_PS)%.o: $(DIR_GEN)%.c $(HEADER)
+$(OBJ_DIR_PS)%.o: $(DIR_GEN)%.c
 	@$(COMP) -c $< -o $@
 
-$(OBJ_DIR_CH)%.o: $(DIR_CH)%.c $(HEADER)
+$(OBJ_DIR_CH)%.o: $(DIR_CH)%.c
 	@$(COMP) -c $< -o $@
-$(OBJ_DIR_CH)%.o: $(DIR_GEN)%.c $(HEADER)
+$(OBJ_DIR_CH)%.o: $(DIR_GEN)%.c
 	@$(COMP) -c $< -o $@ 
 
 clean:
@@ -76,9 +76,9 @@ fclean: clean
 
 re: fclean all
 
-test:
-	gcc *.c ./libft/libft.a test/test.c -g
-checker:
-	gcc *.c checker/checker_main.c ./libft/libft.a -g -D PS_VERBOSE=0
-push_swap:
-	gcc -Wall -Wextra -Werror *.c ./sort_algorithms/sort_three_values.c push_swap/*.c ./libft/libft.a -g -D PS_VERBOSE=1
+# test:
+# 	gcc *.c ./libft/libft.a test/test.c -g
+# checker:
+# 	gcc *.c checker/checker_main.c ./libft/libft.a -g -D PS_VERBOSE=0
+# push_swap:
+# 	gcc -Wall -Wextra -Werror *.c ./sort_algorithms/sort_three_values.c push_swap/*.c ./libft/libft.a -g -D PS_VERBOSE=1

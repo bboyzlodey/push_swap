@@ -6,12 +6,12 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 01:57:09 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 02:36:15 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:55:37 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-#include "../libft/get_next_line.h"
+#include "../../libft/get_next_line.h"
 
 static int	command_is_valid(char *s)
 {

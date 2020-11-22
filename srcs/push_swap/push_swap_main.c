@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:36 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 02:35:27 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:54:46 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ static void		move_all_stack_b(sorter *sorter)
 
 	count_ranges = sorter->ranges->ranges[0].size;
 	i = 0;
-	range_pack_verbose(sorter);
+	// range_pack_verbose(sorter);
 	while (sorter->a->stack_size)
 	{
 		if (i / count_ranges >= sorter->ranges->count_ranges)
@@ -148,13 +148,13 @@ static void		validate_stack(stack *b)
 static void		sort_many_values(sorter *sorter)
 {
 	sorter->ranges = range_pack_from_stack(sorter->a);
-	print_stack(sorter->a[0]);
-	print_stack(sorter->b[0]);
+	// print_stack(sorter->a[0]);
+	// print_stack(sorter->b[0]);
 	move_all_stack_b(sorter);
 	validate_stack(sorter->b);
 	push_all_to_a(sorter->a, sorter->b);
-	print_stack(sorter->a[0]);
-	print_stack(sorter->b[0]);
+	// print_stack(sorter->a[0]);
+	// print_stack(sorter->b[0]);
 }
 
 static sorter	*create_sorter(void)
@@ -186,7 +186,7 @@ int	main(int ac, char **av)
 	}
 	else
 		sort_many_values(sorter);
-	print_stack(*(sorter->a));
+	// print_stack(*(sorter->a));
 	printf("Operations: %d\n", count_of_operations);
 	return (0);
 }

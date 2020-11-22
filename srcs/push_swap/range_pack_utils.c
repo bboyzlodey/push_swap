@@ -6,11 +6,12 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 02:08:27 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 02:35:02 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:50:26 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+#include "../../libft/libft.h"
 
 static int			range_values(int numbers)
 {
@@ -104,6 +105,6 @@ range_pack			*range_pack_from_stack(stack *stack)
 	print_int_arr(ints, stack->stack_size);
 	tmp = pack_from_sorted(ints, range_values(stack->stack_size),\
 	 (stack->stack_size) - 1);
-	ft_memdel(&ints);
+	ft_memdel((void*)&ints);
 	return (tmp);
 }

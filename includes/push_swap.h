@@ -6,14 +6,14 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:25 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 02:03:30 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:42:15 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "libft/libft.h"
+#include "../libft/libft.h"
 
 #ifndef PS_VERBOSE
 # define PS_VERBOSE 0
