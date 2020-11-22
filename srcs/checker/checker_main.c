@@ -6,11 +6,11 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:38 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 02:08:39 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:36:28 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../includes/push_swap.h"
 #include "../libft/get_next_line.h"
 
 static void	check_result(stack *a, stack *b)

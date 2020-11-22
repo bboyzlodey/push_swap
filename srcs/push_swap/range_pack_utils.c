@@ -6,11 +6,11 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 02:08:27 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 02:17:29 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:35:02 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../includes/push_swap.h"
 
 static int			range_values(int numbers)
 {

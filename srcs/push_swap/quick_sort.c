@@ -6,11 +6,11 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 00:56:35 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 01:53:30 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:35:12 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../includes/push_swap.h"
 
 static int	partition(int *array, int start, int end)
 {

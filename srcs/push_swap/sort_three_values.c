@@ -6,11 +6,11 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 19:51:55 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 01:47:06 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:34:33 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../includes/push_swap.h"
 
 /*
 **	Map of compares:

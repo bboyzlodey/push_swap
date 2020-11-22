@@ -6,11 +6,11 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:22 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 01:39:32 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:35:44 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 /*
 **	Recursion search

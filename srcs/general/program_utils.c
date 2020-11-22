@@ -6,11 +6,11 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 01:28:53 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 01:28:57 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:35:50 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 static void	free_stack(stack *clear)
 {
