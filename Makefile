@@ -43,19 +43,19 @@ $(OBJ_DIR_CH):
 $(NAME_ONE): $(OBJ_DIR_PS) $(OBJ_PS)
 	@echo -------compile push swap begin--------
 	@make -C $(LIB_DIR)
-	@$(COMP) $(OBJ_PS) $(LIBFTA) -o $(NAME_ONE)
+	@$(COMP) $(OBJ_PS) $(LIBFTA) -D PS_VERBOSE=1 -o $(NAME_ONE)
 	@echo -------compile push swap finish--------
 
 $(NAME_TWO): $(OBJ_DIR_CH) $(OBJ_CH)
 	@echo -------compile checker begin--------
 	@make -C $(LIB_DIR)
-	@$(COMP) $(OBJ_CH) $(LIBFTA) -o $(NAME_TWO)
+	@$(COMP) $(OBJ_CH) $(LIBFTA) -D PS_VERBOSE=1 -o $(NAME_TWO)
 	@echo -------compile checker finish----------
 
 $(OBJ_DIR_PS)%.o: $(DIR_PS)%.c
 	@$(COMP) -c $< -o $@
 $(OBJ_DIR_PS)%.o: $(DIR_GEN)%.c
-	@$(COMP) -c $< -o $@
+	@$(COMP) -D PS_VERBOSE=1 -c $< -o $@
 
 $(OBJ_DIR_CH)%.o: $(DIR_CH)%.c
 	@$(COMP) -c $< -o $@

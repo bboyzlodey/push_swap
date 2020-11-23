@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:36 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 02:54:46 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 03:02:41 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,5 +188,6 @@ int	main(int ac, char **av)
 		sort_many_values(sorter);
 	// print_stack(*(sorter->a));
 	printf("Operations: %d\n", count_of_operations);
+	printf("PS_VERBOSE: %d\n", PS_VERBOSE);
 	return (0);
 }
