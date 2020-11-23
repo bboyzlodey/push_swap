@@ -49,7 +49,7 @@ $(NAME_ONE): $(OBJ_DIR_PS) $(OBJ_PS)
 $(NAME_TWO): $(OBJ_DIR_CH) $(OBJ_CH)
 	@echo -------compile checker begin--------
 	@make -C $(LIB_DIR)
-	@$(COMP) $(OBJ_CH) $(LIBFTA) -D PS_VERBOSE=1 -o $(NAME_TWO)
+	@$(COMP) -g $(OBJ_CH) $(LIBFTA) -D PS_VERBOSE=1 -o $(NAME_TWO)
 	@echo -------compile checker finish----------
 
 $(OBJ_DIR_PS)%.o: $(DIR_PS)%.c

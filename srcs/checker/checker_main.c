@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:38 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 02:55:45 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 05:24:23 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	checker_process(stack *a, stack *b)
 	line = 0;
 	choosed = 0;
 	func = 0;
-	while (get_next_line(2, &line) > 0)
+	while (get_next_line(0, &line) > 0)
 	{
 		choosed = get_choosed_stack(a, b, line);
 		func = get_action(line);
