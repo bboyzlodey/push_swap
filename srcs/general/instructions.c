@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:05 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 03:33:33 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 04:37:20 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	swap(stack *swap)
 	else
 		exit_program_with_err(NULL, NULL, CODE_ERROR);
 	if (PS_VERBOSE == 1)
-		printf("s%c\n", (swap->identifier));
+		ft_printf("s%c\n", (swap->identifier));
 }
 
 void	rotate(stack *rotate)
@@ -54,7 +54,7 @@ void	rotate(stack *rotate)
 	rotate->head = rotate->foots;
 	rotate->foots = prelast;
 	if (PS_VERBOSE == 1)
-		printf("r%c\n", (rotate->identifier));
+		ft_printf("r%c\n", (rotate->identifier));
 }
 
 void	reverse_rotate(stack *v_rotate)
@@ -68,7 +68,7 @@ void	reverse_rotate(stack *v_rotate)
 	v_rotate->head = v_rotate->foots->next;
 	v_rotate->foots->next = NULL;
 	if (PS_VERBOSE == 1)
-		printf("rr%c\n", (v_rotate->identifier));
+		ft_printf("rr%c\n", (v_rotate->identifier));
 }
 
 void	push_to(stack *from, stack *a, stack *b)
@@ -83,5 +83,5 @@ void	push_to(stack *from, stack *a, stack *b)
 	to = from == a ? b : a;
 	push(to, pop(from));
 	if (PS_VERBOSE == 1 && to != NULL)
-		printf("p%c\n", (to->identifier));
+		ft_printf("p%c\n", (to->identifier));
 }
