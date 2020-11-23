@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
+/*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:22 by asybil            #+#    #+#             */
-/*   Updated: 2020/10/28 01:33:27 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:35:44 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 /*
-*	Recursion search
-*	return value: 0 - if stack sorted, -1 - else
+**	Recursion search
+**	return value: 0 - if stack sorted, -1 - else
 */
 static	int	r_is_sorted(t_item *current, int next_val)
 {
@@ -67,11 +67,24 @@ int		is_sorted_stack(stack *sorted)
 	return (r_is_sorted(sorted->head, sorted->head->next->value));
 }
 
+void	refresh_foots(stack *stack)
+{
+	t_item	*tmp;
+
+	tmp = stack->head;
+	while (tmp && tmp->next)
+	{
+		tmp = tmp->next;
+	}
+	stack->foots = tmp;
+}
+
 void	push(stack *push, t_item *item)
 {
 	item->next = push->head;
 	push->head = item;
 	push->stack_size++;
+	refresh_foots(push);
 }
 
 t_item	*pop(stack *pop)
@@ -84,6 +97,7 @@ t_item	*pop(stack *pop)
 	tmp->next = NULL;
 	tmp->prev = NULL;
 	pop->stack_size--;
+	refresh_foots(pop);
 	return tmp;
 }
 

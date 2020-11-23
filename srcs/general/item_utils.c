@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   item_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
+/*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:17 by asybil            #+#    #+#             */
-/*   Updated: 2020/10/28 01:34:19 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 02:35:56 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 static int	additional_validation(char *valid)
 {
