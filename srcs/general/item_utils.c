@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:17 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 02:35:56 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 04:26:49 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int			init_item(t_item *item, char *value)
 	item->value = 0;
 	if (value == NULL || value[0] == '\0')
 		return (-1);
-	else if (additional_validation(value))
+	else if (additional_validation(value + (value[0] == '-' ? 1 : 0)))
 	{
 		return (-1);
 	}

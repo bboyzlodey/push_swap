@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 01:57:09 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 03:31:53 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 04:30:38 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ stack		*get_choosed_stack(stack *a, stack *b, char *av)
 	{
 		exit_program_with_err(a, b, CODE_ERROR);
 	}
-	if ((!ft_strcmp(av, "ra") || !ft_strcmp(av, "rra") || !ft_strcmp(av, "pb")))
+	if ((!ft_strcmp(av, "ra") || !ft_strcmp(av, "rra") || !ft_strcmp(av, "pb") \
+				|| !ft_strcmp(av, "sa")))
 		return (a);
-	else if ((!ft_strcmp(av, "rb") || !ft_strcmp(av, "rrb") || !ft_strcmp(av, "pa")))
+	else if ((!ft_strcmp(av, "rb") || !ft_strcmp(av, "rrb") || !ft_strcmp(av, "pa") \
+				|| !ft_strcmp(av, "sb")))
 		return (b);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:25 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 03:05:09 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/23 04:18:09 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 #include "../libft/libft.h"
+#include "../ft_printf/ft_printf.h"
 
 #ifndef PS_VERBOSE
 # define PS_VERBOSE 0

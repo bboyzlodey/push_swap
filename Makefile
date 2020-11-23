@@ -1,8 +1,8 @@
 NAME_ONE = push_swap
 NAME_TWO = checker
-LIBFTA = $(LIB_DIR)libft.a
+LIBFTA = $(LIB_DIR)libftprintf.a
 
-LIB_DIR = libft/
+LIB_DIR = ft_printf/
 HEAD_DIR = includes/
 
 COMP =	gcc -Wall -Werror -Wextra
