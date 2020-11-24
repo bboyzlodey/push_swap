@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 01:28:53 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/25 00:59:47 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/25 01:09:43 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,18 @@ void		exit_program_with_err(t_stack *a, t_stack *b, t_exit_code code)
 	free_stack(b);
 	if (code == CODE_OK)
 	{
-		message = "OK";
+		message = "OK\n";
 	}
 	else if (code == CODE_KO)
 	{
-		message = "KO";
+		message = "KO\n";
 	}
 	else if (code == CODE_ERROR)
 	{
-		message = "Error";
+		message = "Error\n";
+		ft_putstr_fd(message, 2);
+		exit(code);
 	}
 	ft_putstr(message);
-	ft_putchar('\n');
 	exit(code);
 }
