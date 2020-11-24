@@ -47,7 +47,6 @@ static void	checker_process(t_stack *a, t_stack *b)
 		ft_strdel(&line);
 	}
 	ft_strdel(&line);
-	check_result(a, b);
 }
 
 int			main(int ac, char **av)
@@ -63,5 +62,6 @@ int			main(int ac, char **av)
 	init_stack(b, 'b');
 	fill_stack(a, ac - 1, av + 1);
 	checker_process(a, b);
+	check_result(a, b);
 	return (0);
 }
