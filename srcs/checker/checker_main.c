@@ -35,13 +35,15 @@ static void	checker_process(t_stack *a, t_stack *b)
 		func = get_action(line);
 		if (func != NULL && choosed != NULL)
 			func(choosed);
-		else if (choosed == NULL)
+		else if (choosed == NULL && func != NULL)
 		{
 			func(a);
 			func(b);
 		}
 		else if (choosed != NULL && line[0] == 'p')
 			push_to(choosed, a, b);
+		else
+			exit_program_with_err(a, b, CODE_ERROR);
 		ft_strdel(&line);
 	}
 	ft_strdel(&line);
