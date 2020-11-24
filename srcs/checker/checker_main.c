@@ -6,25 +6,25 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:38 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 05:24:23 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 03:46:24 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 #include "../../libft/get_next_line.h"
 
-static void	check_result(stack *a, stack *b)
+static void	check_result(t_stack *a, t_stack *b)
 {
 	if (b->stack_size != 0 || is_sorted_stack(a) < 0)
 		exit_program_with_err(a, b, CODE_KO);
 	exit_program_with_err(a, b, CODE_OK);
 }
 
-static void	checker_process(stack *a, stack *b)
+static void	checker_process(t_stack *a, t_stack *b)
 {
-	char	*line;
-	stack	*choosed;
-	action	func;
+	char		*line;
+	t_stack		*choosed;
+	t_action	func;
 
 	line = 0;
 	choosed = 0;
@@ -50,8 +50,8 @@ static void	checker_process(stack *a, stack *b)
 
 int			main(int ac, char **av)
 {
-	stack	*a;
-	stack	*b;
+	t_stack	*a;
+	t_stack	*b;
 
 	if (ac <= 2)
 		exit_program_with_err(NULL, NULL, CODE_ERROR);

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	print_stack(stack print)
+void	print_stack(t_stack print)
 {
 	t_item	*tmp;
 	int		position;

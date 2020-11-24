@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extension_utils.c                                  :+:      :+:    :+:   */
+/*   stack_invalidate.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 01:29:13 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 03:41:32 by asybil           ###   ########.fr       */
+/*   Created: 2020/11/24 02:23:45 by asybil            #+#    #+#             */
+/*   Updated: 2020/11/24 03:36:45 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	repeat(t_action func, int times, t_stack *arg)
+void	refresh_foots(t_stack *a)
 {
-	while (times)
+	t_item	*tmp;
+
+	tmp = 0;
+	tmp = a->head;
+	while (tmp && (tmp->next))
 	{
-		func(arg);
-		times--;
+		tmp = tmp->next;
 	}
+	a->foots = tmp;
 }
