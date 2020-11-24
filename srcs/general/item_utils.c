@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:17 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 15:01:42 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 18:05:46 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 static int	check_overflow(int number, char *str)
 {
-	return (ft_strcmp(ft_itoa(number), str));
+	char	*tmp;
+	int		result;
+
+	tmp = ft_itoa(number);
+	result = ft_strcmp(tmp, str);
+	ft_strdel(&tmp);
+	return (result);
 }
 
 static int	additional_validation(char *valid)
