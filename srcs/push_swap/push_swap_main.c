@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:36 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/25 00:54:13 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/25 01:01:01 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_sorter	*create_sorter(void)
 	return (s);
 }
 
-static void sucess_end(t_sorter *s)
+static void	sucess_end(t_sorter *s)
 {
 	int				i;
 	t_range			*tmp;
@@ -64,7 +64,7 @@ static void sucess_end(t_sorter *s)
 	free_stack(s->b);
 	while (s->ranges && i < (s->ranges->count_ranges))
 	{
-		tmp = ((s->ranges->ranges)+ i);
+		tmp = ((s->ranges->ranges) + i);
 		ft_memdel((void*)&(tmp->array));
 		i++;
 	}
