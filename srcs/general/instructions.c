@@ -6,13 +6,13 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:05 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 02:08:39 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 03:38:02 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	swap(stack *swap)
+void	swap(t_stack *swap)
 {
 	t_item *bellow_top;
 
@@ -37,7 +37,7 @@ void	swap(stack *swap)
 		ft_printf("s%c\n", (swap->identifier));
 }
 
-void	rotate(stack *rotate)
+void	rotate(t_stack *rotate)
 {
 	t_item	*prelast;
 
@@ -58,7 +58,7 @@ void	rotate(stack *rotate)
 		ft_printf("r%c\n", (rotate->identifier));
 }
 
-void	reverse_rotate(stack *v_rotate)
+void	reverse_rotate(t_stack *v_rotate)
 {
 	if (v_rotate->stack_size < 2)
 	{
@@ -73,9 +73,9 @@ void	reverse_rotate(stack *v_rotate)
 		ft_printf("rr%c\n", (v_rotate->identifier));
 }
 
-void	push_to(stack *from, stack *a, stack *b)
+void	push_to(t_stack *from, t_stack *a, t_stack *b)
 {
-	stack	*to;
+	t_stack	*to;
 
 	to = NULL;
 	if (from && from->stack_size == 0)

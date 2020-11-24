@@ -6,13 +6,13 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:36:00 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 02:37:31 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 03:43:21 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static int	int_in_range(int check, range *r)
+static int	int_in_range(int check, t_range *r)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ static int	int_in_range(int check, range *r)
 	return (0);
 }
 
-static void	find_top_bottom(int *top, int *bottom, range *r, stack *a)
+static void	find_top_bottom(int *top, int *bottom, t_range *r, t_stack *a)
 {
 	t_item	*tmp;
 	int		top_founded;
@@ -50,7 +50,7 @@ static void	find_top_bottom(int *top, int *bottom, range *r, stack *a)
 	}
 }
 
-static void	move_to_top(int top, int bottom, stack *a)
+static void	move_to_top(int top, int bottom, t_stack *a)
 {
 	t_item	*tmp;
 	int		top_pos;
@@ -76,7 +76,7 @@ static void	move_to_top(int top, int bottom, stack *a)
 		repeat(reverse_rotate, a->stack_size - bottom_pos, a);
 }
 
-int			find_near_int(range *r, stack *a)
+int			find_near_int(t_range *r, t_stack *a)
 {
 	int	top;
 	int	bottom;

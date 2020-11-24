@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:22 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 02:17:35 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 03:36:45 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static	int	r_is_sorted(t_item *current, int next_val)
 	return (r_is_sorted(current->next, current->next->next->value));
 }
 
-void		init_stack(stack *to_init, char identifier)
+void		init_stack(t_stack *to_init, char identifier)
 {
 	to_init->identifier = identifier;
 	to_init->stack_size = 0;
@@ -34,7 +34,7 @@ void		init_stack(stack *to_init, char identifier)
 	to_init->foots = NULL;
 }
 
-void		fill_stack(stack *to_fill, int ac, char **av)
+void		fill_stack(t_stack *to_fill, int ac, char **av)
 {
 	if (av == NULL || *av == NULL || ac == 0)
 		return ;
@@ -59,11 +59,11 @@ void		fill_stack(stack *to_fill, int ac, char **av)
 }
 
 /*
-**	int		is_sorted_stack(stack sorted);
+**	int		is_sorted_stack(t_stack sorted);
 **	return value: 0 - if stack sorted, -1 - else
 */
 
-int			is_sorted_stack(stack *sorted)
+int			is_sorted_stack(t_stack *sorted)
 {
 	if (sorted->head == NULL || sorted->head->next == NULL)
 		return (0);

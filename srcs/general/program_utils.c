@@ -6,13 +6,13 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 01:28:53 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 02:35:50 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 03:40:57 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void	free_stack(stack *clear)
+static void	free_stack(t_stack *clear)
 {
 	void	*to_free;
 
@@ -32,7 +32,7 @@ static void	free_stack(stack *clear)
 	}
 }
 
-void		exit_program_with_err(stack *a, stack *b, exit_code code)
+void		exit_program_with_err(t_stack *a, t_stack *b, t_exit_code code)
 {
 	char	*message;
 

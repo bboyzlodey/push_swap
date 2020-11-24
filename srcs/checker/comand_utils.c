@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 01:57:09 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 04:30:38 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 03:47:03 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	command_is_valid(char *s)
 	return (result);
 }
 
-stack		*get_choosed_stack(stack *a, stack *b, char *av)
+t_stack		*get_choosed_stack(t_stack *a, t_stack *b, char *av)
 {
 	if (command_is_valid(av) == 0)
 	{
@@ -34,13 +34,13 @@ stack		*get_choosed_stack(stack *a, stack *b, char *av)
 	if ((!ft_strcmp(av, "ra") || !ft_strcmp(av, "rra") || !ft_strcmp(av, "pb") \
 				|| !ft_strcmp(av, "sa")))
 		return (a);
-	else if ((!ft_strcmp(av, "rb") || !ft_strcmp(av, "rrb") || !ft_strcmp(av, "pa") \
-				|| !ft_strcmp(av, "sb")))
+	else if ((!ft_strcmp(av, "rb") || !ft_strcmp(av, "rrb") \
+			|| !ft_strcmp(av, "pa") || !ft_strcmp(av, "sb")))
 		return (b);
 	return (NULL);
 }
 
-action		get_action(char *av)
+t_action	get_action(char *av)
 {
 	if (av[0] == 's')
 	{

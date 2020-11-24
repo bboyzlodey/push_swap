@@ -6,13 +6,13 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 02:43:39 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 03:00:47 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 03:43:51 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int		is_smallest_in_stack(stack *b, int number)
+int		is_smallest_in_stack(t_stack *b, int number)
 {
 	t_item	*tmp;
 
@@ -26,7 +26,7 @@ int		is_smallest_in_stack(stack *b, int number)
 	return (1);
 }
 
-int		find_smallest_biggest(stack *b, int number)
+int		find_smallest_biggest(t_stack *b, int number)
 {
 	int		found;
 	t_item	*tmp;
@@ -50,7 +50,7 @@ int		find_smallest_biggest(stack *b, int number)
 	return (position);
 }
 
-int		find_biggest(stack *b)
+int		find_biggest(t_stack *b)
 {
 	t_item	*tmp;
 	int		biggest;
@@ -74,7 +74,7 @@ int		find_biggest(stack *b)
 	return (position);
 }
 
-void	request_insert(stack *b, int number)
+void	request_insert(t_stack *b, int number)
 {
 	int		target_pos;
 
@@ -97,7 +97,7 @@ void	request_insert(stack *b, int number)
 	}
 }
 
-void	move_all_stack_b(sorter *s)
+void	move_all_stack_b(t_sorter *s)
 {
 	int	i;
 	int	count_ranges;

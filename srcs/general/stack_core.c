@@ -6,13 +6,13 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 02:12:06 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 02:23:56 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 03:41:09 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	push(stack *push, t_item *item)
+void	push(t_stack *push, t_item *item)
 {
 	item->next = push->head;
 	push->head = item;
@@ -20,7 +20,7 @@ void	push(stack *push, t_item *item)
 	refresh_foots(push);
 }
 
-t_item	*pop(stack *pop)
+t_item	*pop(t_stack *pop)
 {
 	t_item	*tmp;
 
@@ -34,11 +34,11 @@ t_item	*pop(stack *pop)
 	return (tmp);
 }
 
-stack	*stack_malloc(void)
+t_stack	*stack_malloc(void)
 {
-	stack	*tmp;
+	t_stack	*tmp;
 
 	tmp = 0;
-	tmp = ft_memalloc(sizeof(stack));
+	tmp = ft_memalloc(sizeof(t_stack));
 	return (tmp);
 }

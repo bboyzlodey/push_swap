@@ -6,13 +6,13 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 01:29:13 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 02:35:33 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 03:41:32 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	repeat(action func, int times, stack *arg)
+void	repeat(t_action func, int times, t_stack *arg)
 {
 	while (times)
 	{

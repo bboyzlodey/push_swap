@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 02:08:27 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 02:40:51 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 03:43:00 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ static int			range_values(int numbers)
 	return (groups);
 }
 
-static range_pack	*pack_from_sorted(int *array, int groups, int numbers)
+static t_range_pack	*pack_from_sorted(int *array, int groups, int numbers)
 {
-	range_pack	*pack;
-	int			i;
-	int			j;
+	t_range_pack	*pack;
+	int				i;
+	int				j;
 
 	i = 0;
 	j = 0;
-	pack = ft_memalloc(sizeof(range_pack));
+	pack = ft_memalloc(sizeof(t_range_pack));
 	pack->count_ranges = groups;
-	pack->ranges = ft_memalloc(sizeof(range) * groups);
+	pack->ranges = ft_memalloc(sizeof(t_range) * groups);
 	while (groups > 0)
 	{
 		j = pack->count_ranges - groups;
@@ -56,7 +56,7 @@ static range_pack	*pack_from_sorted(int *array, int groups, int numbers)
 	return (pack);
 }
 
-static int			*get_int_from_stack(stack *a)
+static int			*get_int_from_stack(t_stack *a)
 {
 	int		*ints;
 	t_item	*tmp;
@@ -74,10 +74,10 @@ static int			*get_int_from_stack(stack *a)
 	return (ints);
 }
 
-range_pack			*range_pack_from_stack(stack *a)
+t_range_pack		*range_pack_from_stack(t_stack *a)
 {
-	int			*ints;
-	range_pack	*tmp;
+	int				*ints;
+	t_range_pack	*tmp;
 
 	tmp = NULL;
 	ints = get_int_from_stack(a);

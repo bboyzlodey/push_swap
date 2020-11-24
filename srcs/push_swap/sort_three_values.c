@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 19:51:55 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 02:34:33 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 03:43:34 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **	Where value of 1 is '>', -1 is '<'.
 */
 
-static void	get_compared_map(int *raw_map, stack *a)
+static void	get_compared_map(int *raw_map, t_stack *a)
 {
 	raw_map[0] = a->head->value > a->head->next->value ? 1 : -1;
 	raw_map[1] = a->head->next->value > a->foots->value ? 1 : -1;
@@ -31,7 +31,7 @@ static void	get_compared_map(int *raw_map, stack *a)
 **	Return value: -1 if can`t sorted. 0 - sorted.
 */
 
-int			sort_three_values(stack *a)
+int			sort_three_values(t_stack *a)
 {
 	int	compared_map[3];
 
@@ -40,7 +40,6 @@ int			sort_three_values(stack *a)
 	if (!is_sorted_stack(a))
 		return (0);
 	get_compared_map(compared_map, a);
-	count_of_operations++;
 	if (compared_map[2] == -1)
 	{
 		if (compared_map[0] > compared_map[1])
@@ -59,7 +58,7 @@ int			sort_three_values(stack *a)
 ** 	TODO
 */
 
-int			sort_five_values(stack *a, stack *b)
+int			sort_five_values(t_stack *a, t_stack *b)
 {
 	while (a->stack_size != 3)
 		push_to(a, a, b);

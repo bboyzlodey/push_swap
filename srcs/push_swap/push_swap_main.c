@@ -6,13 +6,13 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:36 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 02:58:48 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 03:47:23 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void		push_all_to_a(stack *a, stack *b)
+void		push_all_to_a(t_stack *a, t_stack *b)
 {
 	while (b->stack_size)
 	{
@@ -20,7 +20,7 @@ void		push_all_to_a(stack *a, stack *b)
 	}
 }
 
-void		validate_stack(stack *b)
+void		validate_stack(t_stack *b)
 {
 	int		biggest_pos;
 
@@ -39,7 +39,7 @@ void		validate_stack(stack *b)
 	}
 }
 
-void		sort_many_values(sorter *s)
+void		sort_many_values(t_sorter *s)
 {
 	s->ranges = range_pack_from_stack(s->a);
 	move_all_stack_b(s);
@@ -47,9 +47,9 @@ void		sort_many_values(sorter *s)
 	push_all_to_a(s->a, s->b);
 }
 
-sorter		*create_sorter(void)
+t_sorter	*create_sorter(void)
 {
-	sorter	*s;
+	t_sorter	*s;
 
 	s = ft_memalloc(sizeof(s));
 	s->a = stack_malloc();
@@ -61,7 +61,7 @@ sorter		*create_sorter(void)
 
 int			main(int ac, char **av)
 {
-	sorter	*s;
+	t_sorter	*s;
 
 	if (ac <= 2)
 		exit_program_with_err(NULL, NULL, CODE_ERROR);
