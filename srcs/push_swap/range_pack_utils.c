@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 02:08:27 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 05:09:50 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 02:40:51 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int			range_values(int numbers)
 {
 	int	groups;
 
-	groups = 1;
+	groups = 2;
 	groups = numbers > 10 && numbers <= 24 ? 3 : groups;
 	groups = numbers > 24 && numbers <= 99 ? 4 : groups;
 	groups = numbers > 100 && numbers <= 200 ? 5 : groups;
@@ -27,7 +27,7 @@ static int			range_values(int numbers)
 	return (groups);
 }
 
-static range_pack 	*pack_from_sorted(int *array, int groups, int numbers)
+static range_pack	*pack_from_sorted(int *array, int groups, int numbers)
 {
 	range_pack	*pack;
 	int			i;
@@ -56,14 +56,14 @@ static range_pack 	*pack_from_sorted(int *array, int groups, int numbers)
 	return (pack);
 }
 
-static int			*get_int_from_stack(stack *stack)
+static int			*get_int_from_stack(stack *a)
 {
 	int		*ints;
 	t_item	*tmp;
 	int		i;
 
-	ints = ft_memalloc(sizeof(int) * stack->stack_size);
-	tmp = stack->head;
+	ints = ft_memalloc(sizeof(int) * a->stack_size);
+	tmp = a->head;
 	i = 0;
 	while (tmp)
 	{
@@ -74,37 +74,16 @@ static int			*get_int_from_stack(stack *stack)
 	return (ints);
 }
 
-/*
-** TODO Delete debug code
-*/
-
-// static int			print_int_arr(int *array, int size)
-// {
-// 	int i = 0;
-// 	printf("Print int array[%d]\n", size);
-// 	while (i < size)
-// 	{
-// 		printf("%3d: [%4d]\n", i , array[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }
-
-/*
-** TODO Delete debug code
-*/
-
-range_pack			*range_pack_from_stack(stack *stack)
+range_pack			*range_pack_from_stack(stack *a)
 {
 	int			*ints;
 	range_pack	*tmp;
 
 	tmp = NULL;
-	ints = get_int_from_stack(stack);
-	quick_sort(ints, 0, (stack->stack_size) - 1);
-	// print_int_arr(ints, stack->stack_size);
-	tmp = pack_from_sorted(ints, range_values(stack->stack_size),\
-	 (stack->stack_size) - 1);
+	ints = get_int_from_stack(a);
+	quick_sort(ints, 0, (a->stack_size) - 1);
+	tmp = pack_from_sorted(ints, range_values(a->stack_size),\
+							(a->stack_size) - 1);
 	ft_memdel((void*)&ints);
 	return (tmp);
 }

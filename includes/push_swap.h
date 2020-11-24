@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:25 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 04:53:29 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 02:51:58 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ typedef void (*action)(stack*);
 
 typedef void (*repeat_action)(action,int, stack *);
 
+void		refresh_foots(stack *a);
+
 action		get_action(char *av);
 stack		*get_choosed_stack(stack *a, stack *b, char *av);
 
@@ -97,7 +99,15 @@ int			is_sorted_stack(stack *sorted);
 stack		*stack_malloc(void);
 
 void		exit_program_with_err(stack *a, stack *b, exit_code code);
-
+void		move_all_stack_b(sorter *sorter);
+void		request_insert(stack *b, int number);
+int			find_biggest(stack *b);
+int			find_smallest_biggest(stack *b, int number);
+int			is_smallest_in_stack(stack *b, int number);
+sorter		*create_sorter(void);
+void		sort_many_values(sorter *sorter);
+void		validate_stack(stack *b);
+void		push_all_to_a(stack *a, stack *b);
 /*
 **	instructions_utils.c
 */
@@ -137,7 +147,6 @@ void		quick_sort(int *array, int start, int end);
 */
 range		*ft_find_min_max(stack *a, stack *b);
 int			find_near_int(range *range, stack *a);
-void		refresh_foots(stack *stack);
 
 /*
 ** range_pack_utils.c

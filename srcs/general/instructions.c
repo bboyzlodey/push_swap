@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:05 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 06:26:01 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 02:08:39 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ void	rotate(stack *rotate)
 
 void	reverse_rotate(stack *v_rotate)
 {
-	if (PS_VERBOSE == 1)
-		ft_printf("rr%c\n", (v_rotate->identifier));
 	if (v_rotate->stack_size < 2)
 	{
 		exit_program_with_err(NULL, NULL, CODE_ERROR);
@@ -71,8 +69,8 @@ void	reverse_rotate(stack *v_rotate)
 	v_rotate->foots = v_rotate->head;
 	v_rotate->head = v_rotate->foots->next;
 	v_rotate->foots->next = NULL;
-	
-	
+	if (PS_VERBOSE == 1)
+		ft_printf("rr%c\n", (v_rotate->identifier));
 }
 
 void	push_to(stack *from, stack *a, stack *b)
