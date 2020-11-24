@@ -19,7 +19,8 @@ SRCS_PS = extension_utils.c quick_sort.c range_pack_utils.c \
 			sorter.c
 SRCS_CH = checker_main.c comand_utils.c
 SRCS_GEN = instructions.c item_utils.c program_utils.c \
-			stack_utils.c stack_core.c stack_invalidate.c
+			stack_utils.c stack_core.c stack_invalidate.c \
+			contain.c
 
 C_FILE_PS = $(SRCS_PS) $(SRCS_GEN)
 C_FILE_CH = $(SRCS_CH) $(SRCS_GEN)
@@ -77,8 +78,8 @@ fclean: clean
 
 re: fclean all
 
-# test:
-# 	gcc *.c ./libft/libft.a test/test.c -g
+test:
+	gcc ./srcs/general/*.c ./srcs/push_swap/*.c ./libft/libft.a -g
 # checker:
 # 	gcc *.c checker/checker_main.c ./libft/libft.a -g -D PS_VERBOSE=0
 # push_swap:

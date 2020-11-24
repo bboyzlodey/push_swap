@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:36 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 03:47:23 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/25 00:54:13 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,28 +62,39 @@ static void sucess_end(t_sorter *s)
 	i = 0;
 	free_stack(s->a);
 	free_stack(s->b);
-	while (i < (s->ranges->count_ranges))
+	while (s->ranges && i < (s->ranges->count_ranges))
 	{
 		tmp = ((s->ranges->ranges)+ i);
 		ft_memdel((void*)&(tmp->array));
 		i++;
 	}
-	tmp = pack->ranges;
-	ft_memdel((void*)&tmp);
+	if (pack)
+	{
+		tmp = pack->ranges;
+		ft_memdel((void*)&tmp);
+	}
 	ft_memdel((void*)&pack);
 	ft_memdel((void*)&s);
 }
+
 int			main(int ac, char **av)
 {
 	t_sorter	*s;
 
-	if (ac <= 2)
+	if (ac < 2)
 		exit_program_with_err(NULL, NULL, CODE_ERROR);
 	s = create_sorter();
 	fill_stack(s->a, ac - 1, av + 1, s->b);
 	if (s->a->stack_size == 3)
 	{
 		sort_three_values(s->a);
+	}
+	else if (s->a->stack_size <= 2)
+	{
+		if (s->a->head->value > s->a->foots->value)
+		{
+			swap(s->a);
+		}
 	}
 	else
 		sort_many_values(s);

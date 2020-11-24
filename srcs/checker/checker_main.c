@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:38 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 03:46:24 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/25 00:57:02 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int			main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 
-	if (ac <= 2)
+	if (ac < 2)
 		exit_program_with_err(NULL, NULL, CODE_ERROR);
 	a = stack_malloc();
 	b = stack_malloc();

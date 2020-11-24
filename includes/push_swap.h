@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:25 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 03:48:01 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/25 00:26:27 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void			swap(t_stack*swap);
 void			rotate(t_stack*rotate);
 void			reverse_rotate(t_stack*rev_rotate);
 void			repeat(t_action func, int times, t_stack *arg);
+int				contain(int number, t_stack *s);
 
 /*
 **	stack_utils.c

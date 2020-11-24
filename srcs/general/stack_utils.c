@@ -6,7 +6,7 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:22 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/24 03:36:45 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/25 00:31:54 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ void		fill_stack(t_stack *to_fill, int ac, char **av, t_stack *b)
 	(to_fill->foots->next = item_malloc()) != NULL)
 	{
 		to_fill->foots = to_fill->foots->next;
-		if (init_item(to_fill->foots, av[to_fill->stack_size]) < 0)
+		if (init_item(to_fill->foots, av[to_fill->stack_size]) < 0 \
+			|| contain((to_fill->foots->value), to_fill))
 		{
 			exit_program_with_err(to_fill, b, CODE_ERROR);
 		}
