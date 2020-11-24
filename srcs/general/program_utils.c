@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-static void	free_stack(t_stack *clear)
+void	free_stack(t_stack *clear)
 {
 	void	*to_free;
 

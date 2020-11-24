@@ -72,3 +72,12 @@ int			sort_five_values(t_stack *a, t_stack *b)
 	}
 	return (1);
 }
+
+
+void		sort_many_values(t_sorter *s)
+{
+	s->ranges = range_pack_from_stack(s->a);
+	move_all_stack_b(s);
+	validate_stack(s->b);
+	push_all_to_a(s->a, s->b);
+}

@@ -15,7 +15,7 @@ OBJ_DIR_PS = obj_ps/
 OBJ_DIR_CH = obj_ch/
 
 SRCS_PS = extension_utils.c quick_sort.c range_pack_utils.c \
-			range_utils.c sort_three_values.c push_swap_main.c \
+			range_utils.c sort_algoritms.c push_swap_main.c \
 			sorter.c
 SRCS_CH = checker_main.c comand_utils.c
 SRCS_GEN = instructions.c item_utils.c program_utils.c \

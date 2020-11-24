@@ -80,9 +80,10 @@ void			repeat(t_action func, int times, t_stack *arg);
 */
 
 void			init_stack(t_stack*to_init, char identifier);
-void			fill_stack(t_stack*to_fill, int ac, char **av);
+void			fill_stack(t_stack*to_fill, int ac, char **av, t_stack *b);
 int				is_sorted_stack(t_stack*sorted);
 t_stack			*stack_malloc(void);
+void			free_stack(t_stack *clear);
 
 void			exit_program_with_err(t_stack*a, t_stack *b, t_exit_code code);
 void			move_all_stack_b(t_sorter *s);

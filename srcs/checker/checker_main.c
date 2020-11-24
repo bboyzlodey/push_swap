@@ -60,7 +60,7 @@ int			main(int ac, char **av)
 	b = stack_malloc();
 	init_stack(a, 'a');
 	init_stack(b, 'b');
-	fill_stack(a, ac - 1, av + 1);
+	fill_stack(a, ac - 1, av + 1, b);
 	checker_process(a, b);
 	check_result(a, b);
 	return (0);

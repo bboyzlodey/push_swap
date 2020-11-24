@@ -34,13 +34,13 @@ void		init_stack(t_stack *to_init, char identifier)
 	to_init->foots = NULL;
 }
 
-void		fill_stack(t_stack *to_fill, int ac, char **av)
+void		fill_stack(t_stack *to_fill, int ac, char **av, t_stack *b)
 {
 	if (av == NULL || *av == NULL || ac == 0)
 		return ;
 	else if ((to_fill->head = item_malloc()) == NULL)
 	{
-		exit_program_with_err(to_fill, NULL, CODE_MEMMORY_ERROR);
+		exit_program_with_err(to_fill, b, CODE_MEMMORY_ERROR);
 	}
 	else if (init_item(to_fill->head, av[to_fill->stack_size]) < 0)
 		exit_program_with_err(to_fill, NULL, CODE_ERROR);
@@ -52,7 +52,7 @@ void		fill_stack(t_stack *to_fill, int ac, char **av)
 		to_fill->foots = to_fill->foots->next;
 		if (init_item(to_fill->foots, av[to_fill->stack_size]) < 0)
 		{
-			exit_program_with_err(to_fill, NULL, CODE_ERROR);
+			exit_program_with_err(to_fill, b, CODE_ERROR);
 		}
 		to_fill->stack_size++;
 	}

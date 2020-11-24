@@ -39,14 +39,6 @@ void		validate_stack(t_stack *b)
 	}
 }
 
-void		sort_many_values(t_sorter *s)
-{
-	s->ranges = range_pack_from_stack(s->a);
-	move_all_stack_b(s);
-	validate_stack(s->b);
-	push_all_to_a(s->a, s->b);
-}
-
 t_sorter	*create_sorter(void)
 {
 	t_sorter	*s;
@@ -59,6 +51,28 @@ t_sorter	*create_sorter(void)
 	return (s);
 }
 
+static void sucess_end(t_sorter *s)
+{
+	int				i;
+	t_range			*tmp;
+	t_range_pack	*pack;
+
+	tmp = NULL;
+	pack = s->ranges;
+	i = 0;
+	free_stack(s->a);
+	free_stack(s->b);
+	while (i < (s->ranges->count_ranges))
+	{
+		tmp = ((s->ranges->ranges)+ i);
+		ft_memdel((void*)&(tmp->array));
+		i++;
+	}
+	tmp = pack->ranges;
+	ft_memdel((void*)&tmp);
+	ft_memdel((void*)&pack);
+	ft_memdel((void*)&s);
+}
 int			main(int ac, char **av)
 {
 	t_sorter	*s;
@@ -66,12 +80,13 @@ int			main(int ac, char **av)
 	if (ac <= 2)
 		exit_program_with_err(NULL, NULL, CODE_ERROR);
 	s = create_sorter();
-	fill_stack(s->a, ac - 1, av + 1);
+	fill_stack(s->a, ac - 1, av + 1, s->b);
 	if (s->a->stack_size == 3)
 	{
 		sort_three_values(s->a);
 	}
 	else
 		sort_many_values(s);
+	sucess_end(s);
 	return (0);
 }
