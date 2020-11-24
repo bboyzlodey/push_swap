@@ -6,11 +6,16 @@
 /*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:17 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/23 04:26:49 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/24 15:01:42 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+static int	check_overflow(int number, char *str)
+{
+	return (ft_strcmp(ft_itoa(number), str));
+}
 
 static int	additional_validation(char *valid)
 {
@@ -37,6 +42,10 @@ int			init_item(t_item *item, char *value)
 		return (-1);
 	}
 	item->value = ft_atoi(value);
+	if (check_overflow((item->value), value))
+	{
+		return (-1);
+	}
 	return (0);
 }
 
