@@ -43,7 +43,7 @@ t_sorter	*create_sorter(void)
 {
 	t_sorter	*s;
 
-	s = ft_memalloc(sizeof(s));
+	s = ft_memalloc(sizeof(t_sorter));
 	s->a = stack_malloc();
 	s->b = stack_malloc();
 	init_stack(s->a, 'a');
