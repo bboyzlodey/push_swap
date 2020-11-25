@@ -75,6 +75,7 @@ static void	sucess_end(t_sorter *s)
 	}
 	ft_memdel((void*)&pack);
 	ft_memdel((void*)&s);
+	exit(CODE_SUCCESS);
 }
 
 int			main(int ac, char **av)
@@ -82,7 +83,7 @@ int			main(int ac, char **av)
 	t_sorter	*s;
 
 	if (ac < 2)
-		exit_program_with_err(NULL, NULL, CODE_ERROR);
+		return (0);
 	s = create_sorter();
 	fill_stack(s->a, ac - 1, av + 1, s->b);
 	if (is_sorted_stack(s->a) == 0)

@@ -55,7 +55,7 @@ int			main(int ac, char **av)
 	t_stack	*b;
 
 	if (ac < 2)
-		exit_program_with_err(NULL, NULL, CODE_ERROR);
+		return (0);
 	a = stack_malloc();
 	b = stack_malloc();
 	init_stack(a, 'a');
