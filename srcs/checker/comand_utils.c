@@ -42,15 +42,21 @@ t_stack		*get_choosed_stack(t_stack *a, t_stack *b, char *av)
 
 t_action	get_action(char *av)
 {
-	if (av[0] == 's')
+	int	len;
+
+	len = ft_strlen(av);
+	if (!ft_strcmp(av, "sa") || !ft_strcmp(av, "sb") || !ft_strcmp(av, "sss"))
 	{
 		return (swap);
 	}
-	else if (av[0] == 'r')
+	else if (av[0] == 'r' && len <= 3)
 	{
-		if (av[1] == 'r')
+		if (!ft_strcmp(av, "rrr") || !ft_strcmp(av, "rra") || \
+			!ft_strcmp(av, "rrb"))
+			return (rotate);
+		else if (!ft_strcmp(av, "rr") || !ft_strcmp(av, "ra") || \
+			!ft_strcmp(av, "rb"))
 			return (reverse_rotate);
-		return (rotate);
 	}
 	return (NULL);
 }

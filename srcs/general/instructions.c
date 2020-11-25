@@ -32,7 +32,7 @@ void	swap(t_stack *swap)
 		swap->foots->next = NULL;
 	}
 	else
-		exit_program_with_err(swap, NULL, CODE_ERROR);
+		exit_program_with_err(swap, NULL, CODE_KO);
 	if (PS_VERBOSE == 1)
 		ft_printf("s%c\n", (swap->identifier));
 }
@@ -44,7 +44,7 @@ void	rotate(t_stack *rotate)
 	prelast = NULL;
 	prelast = rotate->head;
 	if (rotate->stack_size < 2)
-		exit_program_with_err(rotate, NULL, CODE_ERROR);
+		exit_program_with_err(rotate, NULL, CODE_KO);
 	while (prelast->next && prelast->next != rotate->foots)
 	{
 		prelast = prelast->next;
@@ -55,14 +55,14 @@ void	rotate(t_stack *rotate)
 	rotate->foots = prelast;
 	refresh_foots(rotate);
 	if (PS_VERBOSE == 1)
-		ft_printf("r%c\n", (rotate->identifier));
+		ft_printf("rr%c\n", (rotate->identifier));
 }
 
 void	reverse_rotate(t_stack *v_rotate)
 {
 	if (v_rotate->stack_size < 2)
 	{
-		exit_program_with_err(v_rotate, NULL, CODE_ERROR);
+		exit_program_with_err(v_rotate, NULL, CODE_KO);
 	}
 	refresh_foots(v_rotate);
 	v_rotate->foots->next = v_rotate->head;
@@ -70,7 +70,7 @@ void	reverse_rotate(t_stack *v_rotate)
 	v_rotate->head = v_rotate->foots->next;
 	v_rotate->foots->next = NULL;
 	if (PS_VERBOSE == 1)
-		ft_printf("rr%c\n", (v_rotate->identifier));
+		ft_printf("r%c\n", (v_rotate->identifier));
 }
 
 void	push_to(t_stack *from, t_stack *a, t_stack *b)
@@ -80,7 +80,7 @@ void	push_to(t_stack *from, t_stack *a, t_stack *b)
 	to = NULL;
 	if (from && from->stack_size == 0)
 	{
-		exit_program_with_err(from, a, CODE_ERROR);
+		exit_program_with_err(from, a, CODE_KO);
 	}
 	to = from == a ? b : a;
 	push(to, pop(from));

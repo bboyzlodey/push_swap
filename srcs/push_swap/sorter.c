@@ -89,11 +89,11 @@ void	request_insert(t_stack *b, int number)
 	}
 	if (target_pos <= (b->stack_size) / 2)
 	{
-		repeat(reverse_rotate, target_pos, b);
+		repeat(rotate, target_pos, b);
 	}
 	else
 	{
-		repeat(rotate, b->stack_size - target_pos, b);
+		repeat(reverse_rotate, b->stack_size - target_pos, b);
 	}
 }
 

@@ -85,6 +85,8 @@ int			main(int ac, char **av)
 		exit_program_with_err(NULL, NULL, CODE_ERROR);
 	s = create_sorter();
 	fill_stack(s->a, ac - 1, av + 1, s->b);
+	if (is_sorted_stack(s->a) == 0)
+		sucess_end(s);
 	if (s->a->stack_size == 3)
 	{
 		sort_three_values(s->a);
