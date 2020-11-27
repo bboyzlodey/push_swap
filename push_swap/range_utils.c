@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   range_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
+/*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:36:00 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 19:12:15 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/26 03:06:56 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static range	*range_malloc(void)
 	return (ft_memalloc(sizeof(range)));
 }
 
-static int	int_in_range(int check, range *range)
+int	int_in_range(int check, range *range)
 {
 	int	i;
 

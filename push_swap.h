@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
+/*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:25 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 21:45:43 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/26 23:53:51 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,11 @@ typedef enum	e_exit_code {
 
 typedef	t_exit_code exit_code;
 
-typedef struct	s_item
-{
-	int				value;
-	struct s_item	*next;
-	struct s_item	*prev;
-}				t_item;
 
 
-typedef struct	s_stack {
-	t_item	*head;
-	t_item	*foots;
-	int		stack_size;
-	char	identifier;
-}				t_stack;
 
-typedef t_stack stack;
+
+
 
 struct s_range
 {
@@ -64,6 +53,28 @@ struct s_range_pack
 
 typedef struct s_range_pack range_pack;
 
+
+
+
+typedef struct	s_item
+{
+	int				value;
+	struct s_item	*next;
+	struct s_item	*prev;
+	int				pos;
+	void (*callback)(stack*);
+	int				count;
+}				t_item;
+
+typedef struct	s_stack {
+	t_item	*head;
+	t_item	*foots;
+	int		stack_size;
+	char	identifier;
+}				t_stack;
+
+typedef t_stack stack;
+
 struct s_sorter
 {
 	stack		*a;
@@ -74,6 +85,8 @@ struct s_sorter
 typedef	struct s_sorter sorter;
 
 typedef void (*action)(stack*);
+
+
 
 typedef void (*repeat_action)(action,int, stack *);
 
@@ -140,5 +153,7 @@ range_pack			*range_pack_from_stack(stack *stack);
 */
 int			sort_three_values(stack *a);
 int			sort_five_values(stack *a, stack *b);
+void		refresh_positions(t_stack *a);
+int	int_in_range(int check, range *range);
 
 #endif

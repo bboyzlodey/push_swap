@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
+/*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:33:22 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 21:45:34 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/26 02:43:10 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void	push(stack *push, t_item *item)
 	push->head = item;
 	push->stack_size++;
 	refresh_foots(push);
+	refresh_positions(0);
 }
 
 t_item	*pop(stack *pop)
@@ -98,6 +99,7 @@ t_item	*pop(stack *pop)
 	tmp->prev = NULL;
 	pop->stack_size--;
 	refresh_foots(pop);
+	refresh_positions(pop);
 	return tmp;
 }
 

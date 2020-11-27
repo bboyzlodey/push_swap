@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asybil <asybil@student.21-school.ru >      +#+  +:+       +#+        */
+/*   By: asybil <asybil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 01:34:05 by asybil            #+#    #+#             */
-/*   Updated: 2020/11/22 21:47:23 by asybil           ###   ########.fr       */
+/*   Updated: 2020/11/26 23:01:46 by asybil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	swap(stack *swap)
 		swap->head->next = swap->foots;
 		swap->foots->next = NULL;
 	}
+	refresh_positions(swap);
 	if (PS_VERBOSE == 1)
 	{
 		// TODO Use ft_printf
@@ -56,6 +57,7 @@ void	rotate(stack *rotate)
 	rotate->foots->next = rotate->head;
 	rotate->head = rotate->foots;
 	rotate->foots = prelast;
+	refresh_positions(rotate);
 	if (PS_VERBOSE == 1)
 	{
 		// TODO Use ft_printf
